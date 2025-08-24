@@ -1,0 +1,27 @@
+
+將每章建立接要放在 cache, 減少頻繁送OPENAI API，降低TOKEN使用量
+執行：python tools/batch_summarize.py --mode local --only-missing
+
+
+✅ 重置完成！建議接續步驟：
+   完成後建議立刻跑：
+	•	python ai_style_builder.py → 產生新的 style_profile.json
+	•	python batch_outline_builder.py → 更新章節大綱
+	•	python tools/data/batch_summarize.py --mode local → 更新 summaries.json
+
+可用的常見旗標（建議）
+	•	事件狀態：has_confessed(bool), is_together(bool), secret_revealed(bool)
+	•	情緒/關係：heroine_mood(“calm|conflicted|angry…”), trust_level(0~5)
+	•	劇情節奏：arc_phase(“鋪陳|上升|高潮|收束”)
+	•	外部壓力：rival_pressure(0~3), deadline_days(int)
+	•	敘事視角：pov(“林初妃|賀宇珩|…”)
+	•	場景位置：location(“公司會議室|青城·客棧”)
+	•	伏筆/懸念：cliffhanger(string), foreshadow_tag(string)
+
+何時需要填？
+	•	本章做了「會影響後續」的決定/關係變化/視角切換/場景轉場，就填。
+	•	僅日常過場、沒有狀態變動，可留空。
+
+小提醒
+	•	JSON 更穩；key=value 也可，被程式自動解析。
+	•	之後可透過「旗標模板 UI（A8）」直接點選，不必手打。

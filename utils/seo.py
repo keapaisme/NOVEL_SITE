@@ -1,0 +1,1 @@
+# SEO metadata generator placeholder

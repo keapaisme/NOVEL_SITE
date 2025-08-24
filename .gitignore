@@ -1,0 +1,55 @@
+# === Python 編譯暫存 ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.so
+
+# === 環境設定 ===
+.env
+*.env
+
+# === IDE/編輯器 ===
+.vscode/
+.idea/
+*.iml
+
+# === 系統檔案 ===
+.DS_Store
+Thumbs.db
+
+# === 專案備份與輸出 ===
+*.zip
+*.tar
+*.gz
+*.bak
+*.log
+
+# === Streamlit / Cache ===
+data/cache/
+data/outlines/
+*.sqlite
+
+# === 生成資料檔 ===
+data/chapters_md/
+data/vote_log.json
+data/vote_config.json
+data/style_profile.json
+data/chapter_outlines.json
+data/summaries.json
+data/memory.json
+
+# === 測試輸入/輸出檔 ===
+images/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.xlsx
+
+# === 虛擬環境 ===
+.venv/
+venv/
+ENV/
+env/

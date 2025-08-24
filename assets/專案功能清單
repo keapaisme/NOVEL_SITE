@@ -1,0 +1,55 @@
+## 📌 專案功能清單（2025-08-24 更新）
+
+### ✅ 已完成（v1.1 ~ v1.2 部分）
+- **章節生成**
+  - 手動輸入提示 → GPT 生成 Markdown 章節
+  - 支援「副標題」欄位
+  - 支援「前幾章摘要/大綱」上下文
+  - 支援 `plot_flags` 劇情旗標（可 JSON / key=value）
+  - 自動寫入 `data/chapters_md/`
+- **投票系統（集中式）**
+  - 每 3 章自動產生投票題（寫入 `vote_config.json`）
+  - 讀者可在 `04_讀者投票.py` 投票 → 寫入 `vote_log.json`
+  - 投票截止日前不可續寫（後台可強制跳過）
+- **票選結果分析**
+  - `vote_analyzer.py` 解析勝出選項
+  - 生成新章節時可選擇是否注入「讀者票選提示」
+- **旗標管理**
+  - `memory.json` 紀錄角色屬性 / 劇情狀態
+  - 已整合 A8：旗標模板 UI → 不用手打 JSON
+- **大綱 / 摘要系統**
+  - `batch_outline_builder.py` 產生 `chapter_outlines.json`
+  - `batch_summarize.py`（local/api 雙模式）更新 `summaries.json`
+- **風格設定**
+  - `ai_style_builder.py` 產生 `style_profile.json`（敘事語氣、句構、慣例）
+- **維運工具**
+  - `pack_and_reset.py`：打包備份、清空重置、初始化新小說
+  - `.gitignore` 已規劃（忽略 .env / data / cache / images / zip）
+
+---
+
+### ⏳ 待辦（規劃中 v1.2 ~ v1.3）
+- **UI 與管理**
+  - 投票結果統計後台（圖表化、方便觀察）
+  - 投票管理頁（新增/關閉題目） → 待與 04 合併
+  - 草稿版本控制（歷史版本切換 / 回復）
+- **故事功能**
+  - 新增章節生成模式選單：自動生成 / 手動輸入 / 上傳 TXT
+  - 自動從章節推論 `plot_flags`（避免人工填寫）
+  - 加入「插入金句、道具」模組
+  - 人物關係圖、角色圖鑑
+- **進階玩法**
+  - 課金版（個人專屬支線、NPC / 彈幕 / 留名）
+  - 單機版互動 APP（背景生成、每日一章限流）
+- **部署**
+  - 雲端上線（Streamlit Cloud / Render）
+  - 多使用者登入（主編 / 讀者）
+  - 自動寄送章節 / 投票連結
+
+---
+
+### ☑️ 紀錄檔案現況
+- `style_profile.json` → 已生成完整風格規則
+- `memory.json` → 已含主要角色、flags
+- `roadmap.md` → 已規劃 v1.1 ~ v2.0
+- `changelog.md` → 已有 v1.1 更新紀錄
